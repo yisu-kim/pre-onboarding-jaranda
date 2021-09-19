@@ -1,128 +1,155 @@
-<p align='middle'>
-<a href='https://jaranda.netlify.app/'><img src='https://user-images.githubusercontent.com/51367622/128473643-62cedb40-2390-4356-9db4-5ddb2cfa346e.png' width="100px;" alt="LiveMD" /></a></p>
-<p align='middle'><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/six-sense/jaranda?color=blueviolet"> <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/six-sense/jaranda"> 
-<h1 align='middle'><a href='https://jaranda.netlify.app/'>https://jaranda.netlify.app/</a></h1>
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://jaranda.kr/">
+    <img src="https://user-images.githubusercontent.com/37607373/133915758-1e45a4e4-17ab-4077-8f0b-d8c48a65bf21.jpg" alt="mrcamel logo" width=150 />
+  </a>
 
----
-🧐[노션 미팅 로그](https://first-english-d5d.notion.site/d789f1ad2e434084be98bb6c54a006b2)에서 더 다양한 개발 과정을 확인해보세요!
+  <h3 align="center">사용자 메뉴 권한을 제어하는 관리자 페이지</h3>
+  
+  <p align="center">
+    프리온보딩 코스 Jaranda 기업 과제
+    <br />
+    <br />
+    <a href="https://jaranda.netlify.app/">View Demo</a>
+    ·
+    <a href="https://github.com/six-sense/jaranda">Original Team Repo</a>
+  </p>
+</p>
 
----
+**Demo Login Info**
 
-<br/>
+- 관리자: admin1 / admin123!
+- 사용자: user1 / user123!
 
-## 📌 프로젝트 소개
+<br>
 
-###  프리온보딩 코스 Jaranda 기업 과제
-> ❕ **회원가입, 로그인 / 로그아웃 기능과 다양한 메뉴를 가지고 있는 홈페이지, 관리자 페이지 구현하기**❗
-
-<br/>
-
+<!-- Assignment Requirements -->
 <details>
-    <summary><STRONG>
-       📚 과제 요구사항 보기
-        <STRONG></summary>
-    <div markdown="1">
-<h3>1. 아래 정보를 입력받아 회원가입 페이지를 구현하고 로그인/로그아웃 기능을 구현해주세요.</h3>
-- 이름<br/>
-- 주소 (팝업을 이용해서 입력받음)<br/>
-- 신용카드 정보 (팝업을 이용해서 입력받음)<br/>
-- 나이<br/><br/>
-1.1 관리자 로그인을 하면 등록한 계정 정보를 아래 방법을 이용하여 시각화 해 주세요.<br/>
-- 테이블 Component 페이지 만들기<br/>
-- Data Table 구현<br/>
-- 페이지네이션 구현<br/>
-- 검색기능 구현<br/><br/>
-1.2 정보는 로컬 저장소 등 자유롭게 저장해도 됩니다.<br/><br/>
-1.3 주소는 다음에서 제공하는 입력창을 사용해도 무방합니다.<br/><br/>
-1.4 관리자 계정은 임의로 정의해도 됩니다.<br/><br/>
-<h3>2. 다양한 메뉴를 가지고 있는 홈페이지 관리자 페이지를 구현해 주세요.</h3>
-2.1 계정, 비밀번호만 입력하면 로그인이 되어야 합니다.<br/><br/>
-2.2 로그인 된 계정은 자신에게 허용된 메뉴만 보여야 합니다.<br/><br/>
-2.3 관리자는 계정을 임의로 생성할 수 있고 계정별로 볼 수 있는 메뉴를 설정할 수 있습니다.<br/><br/>
-2.4 관리자 계정은 임의로 정의해도 됩니다.<br/><br/>
-2.5 정보는 로컬 저장소 등 자유롭게 저장해도 됩니다.<br/><br/>
-2.6 메뉴는 임의대로 정의해도 되며 메뉴를 선택했을 때 나오는 화면에는 메뉴명이 출력되면 됩니다.<br/><br/>
-2.7 관리자 로그인을 하면 등록한 계정 정보를 아래 방법을 이용하여 시각화 해 주세요.<br/>
-- 테이블 Component 페이지 만들기<br/>
-- Data Table 구현<br/>
-- 페이지네이션 구현<br/>
-- 검색기능 구현<br/>
-</div>
+  <summary>📋 과제 요구사항 보기</summary>
+  <div markdown="1">
+
+#### 회원가입 페이지
+
+아래 정보를 입력받아 회원가입 페이지를 구현하고 로그인/로그아웃 기능을 구현해주세요.
+
+- 이름
+- 주소 (팝업을 이용해서 입력받음)
+- 신용카드 정보 (팝업을 이용해서 입력받음)
+- 나이
+
+1.  관리자 로그인을 하면 등록한 계정 정보를 아래 방법을 이용하여 시각화 해 주세요.
+
+    - 테이블 Component 페이지 만들기
+    - Data Table 구현
+    - 페이지네이션 구현
+    - 검색기능 구현
+
+2.  정보는 로컬 저장소 등 자유롭게 저장해도 됩니다.
+3.  주소는 다음에서 제공하는 입력창을 사용해도 무방합니다.
+4.  관리자 계정은 임의로 정의해도 됩니다.
+
+#### 관리자 페이지
+
+다양한 메뉴를 가지고 있는 홈페이지 관리자 페이지를 구현해 주세요.
+
+1. 계정, 비밀번호만 입력하면 로그인이 되어야 합니다.
+2. 로그인 된 계정은 자신에게 허용된 메뉴만 보여야 합니다.
+3. 관리자는 계정을 임의로 생성할 수 있고 계정별로 볼 수 있는 메뉴를 설정할 수 있습니다.
+4. 관리자 계정은 임의로 정의해도 됩니다.
+5. 정보는 로컬 저장소 등 자유롭게 저장해도 됩니다.
+6. 메뉴는 임의대로 정의해도 되며 메뉴를 선택했을 때 나오는 화면에는 메뉴명이 출력되면 됩니다.
+7. 관리자 로그인을 하면 등록한 계정 정보를 아래 방법을 이용하여 시각화 해 주세요.
+
+   - 테이블 Component 페이지 만들기
+   - Data Table 구현
+   - 페이지네이션 구현
+   - 검색기능 구현
+
+  </div>
 </details>
-<br/>
 
-## 📑 구현 목록
+## About The Project
 
-`회원 가입`
+### 로그인 페이지
 
-- 아이디, 비밀번호, 이름, 나이, 주소, 신용카드 등록을 통한 회원 가입 기능
-- 각 `input`(아이디, 회원가입, 카드)에 대한 Validate 설정(유효성 검사, 중복 검사, 비밀번호 확인)
-- 모든 input 값이 존재할 때 회원가입 완료 (미흡 입력 존재 시 해당 인풋으로 cursor 이동)
-- 주소 등록은 다음 API 활용, 카드 등록은 팝업창 구현.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/37607373/133926140-17de0d3d-2984-4bb2-970f-413a69912bf5.gif" alt="project signin page screenshot" height=600 />
+</p>
 
-`로그인`
+### 회원가입 페이지
 
-- 아이디, 패스워드 유효성 검사
-- 유효성 검사 후 존재하는 유저 인증 후 token 발급
-- 발급된 token으로 admin, user 페이지 이동
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/37607373/133926166-88a8dd4b-cee5-4a0a-ad25-c0256b785d6c.gif" alt="project signup page screenshot" height=600 />
+</p>
 
-`관리자`
+### 관리자 페이지
 
-- localStorage에 존재하는 userData 출력
-- 검색기능으로 name, userId에서 키워드 검색
-- localStorage에 존재하는 userId의 menuItem 수정 가능
-- 관리자 혹은 유저로 계정 추가
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/37607373/133926178-e358d229-ae26-45d4-97c1-7b1bd8754e55.gif" alt="project admin page screenshot" height=600 />
+</p>
 
-`메뉴바`
+### Built With
 
-- 관리자 페이지에서 계정별 메뉴 설정 시 해당 계정에게 선택된 메뉴만 보여짐
-- 유저가 권한이 없는 페이지주소를 입력하면 페이지 접근불가, 메인페이지로 이동
-- Not Found 페이지
-        
+- React
+- React Router
+- styled-components
 
-`라우트` && `접근 권한`
+## Getting Started
 
-- 로그인 전
-  - 로그인 없이 접근 가능한 메뉴 렌더링 (로그인/회원가입 페이지)
-- 로그인 후
-  - 관리자 계정으로 로그인시 Admin 페이지 렌더링
-  - 일반 계정으로 로그인시 게스트메뉴에서 유저별 허가된 메뉴 렌더링
-  - 로그인 후에는 로그인/회원가입 페이지 접근 불가
-- 로그아웃
+### Installation
 
-<br/>
+To install packages:
 
-## 👨‍💻 실행 방법
+```sh
+npm install
+```
 
-### 설치
+To serve the app:
 
-`npm install`
+```sh
+npm start
+```
 
-### 실행
+## Features
 
-`npm start`
+> 제가 개발에 참여한 기능은 ✅로 표시했습니다.
 
-### 데모 로그인
+1. 회원 가입
 
-`Admin : admin1 / admin123!`
+   - 아이디, 비밀번호, 이름, 나이, 주소, 신용카드 등록을 통한 회원 가입 기능
+   - 아이디 중복 검사, 비밀번호 확인, 이름과 나이에 대한 유효성 검증
+   - 주소 등록은 다음 API 활용
+   - ✅ React Portals를 활용한 모달 컴포넌트로 신용카드 정보를 입력받는 팝업 구현
+   - ✅ 신용카드 입력 정보(카드번호, 이름, 유효기간, CVC) 검증
 
-`User : user1 / user123!`
+2. 로그인
 
-<br/>
+   - 아이디, 패스워드 유효성 검사
+   - 유효성 검사 후 존재하는 유저 인증 후 token 발급
+   - 발급된 token으로 admin, user 페이지 이동
 
-## 📂프로젝트 구조
+3. 관리자
 
+   - localStorage에 존재하는 userData 출력
+   - 검색기능으로 name, userId에서 키워드 검색
+   - localStorage에 존재하는 userId의 menuItem 수정 가능
+   - 관리자 혹은 유저로 계정 추가
 
-| 폴더 / 파일 | 설명                               |
-| ----------- | ---------------------------------- |
-| Assets      | jaranda 로고 및 아이콘.            |
-| Components  | 각 Page에 사용되는 Component 모음. |
-| Modal       | 팝업창 Modal.                      |
-| Pages       | Route를 위한 Page 목록.            |
-| Services    | 권한별 인가 책정.                  |
-| Styles      | 기본 공통 Style.                   |
-| Utils       | localStorage 접근 및 공통 함수.    |
-| App.js      | public, private Route 정리.        |
-| routes.js   | 계정별 페이지 권한 구분.           |
+4. 내비게이션 바
 
-<br/>
+   - ✅ Public/Private Route로 페이지 접근 제어 기능 구현
+   - ✅ 로그인 전에만 로그인, 회원가입 페이지 접근 가능
+   - ✅ 로그인 후에는 사용자는 허가된 메뉴만 볼 수 있고 이동 가능
+   - Not Found 페이지
+
+## Members
+
+- [yisu-kim](https://github.com/yisu-kim)
+- [kwak-bs](https://github.com/kwak-bs)
+- [yh1120](https://github.com/yh1120)
+- [tTab1204](https://github.com/tTab1204)
+- [UlongChaS2](https://github.com/UlongChaS2)
+- [hurima90-kim](https://github.com/hurima90-kim)
+- [Telling-Y](https://github.com/Telling-Y)
+- [chyeon97](https://github.com/chyeon97)
