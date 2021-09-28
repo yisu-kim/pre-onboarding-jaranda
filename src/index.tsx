@@ -1,10 +1,9 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import mixin from './Styles/mixin';
-import { GlobalStyles } from './Styles/GlobalStyles';
-import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import App from './App';
+import { GlobalStyles } from './Styles/GlobalStyles';
+import mixin from './Styles/mixin';
 
 ReactDOM.render(
   <>
