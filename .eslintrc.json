@@ -6,34 +6,18 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:react-hooks/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 12,
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
-  "plugins": ["react"],
-  "rules": {
-    "import/extensions": "off",
-    "no-use-before-define": "off",
-    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    },
-    "import/resolver": {
-      "node": {
-        "paths": ["src"],
-        "extensions": [".js", ".jsx"]
-      }
-    }
-  }
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {}
 }
