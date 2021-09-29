@@ -1,11 +1,19 @@
-import { React } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { ROUTES } from './utils/constants';
+import { ROUTES } from 'utils/constants';
 import { checkIsAdmin, checkIsLoggedIn } from 'Services/auth';
 import { isUserMenu } from 'Services/user';
 
-export const PublicRoute = ({ restricted, children, ...rest }) => {
+interface PublicRouteProps {
+  restricted: boolean;
+  children: React.ReactNode;
+  [x: string]: unknown;
+}
+
+export const PublicRoute: React.FC<PublicRouteProps> = ({
+  restricted,
+  children,
+  ...rest
+}) => {
   return (
     <Route {...rest}>
       {checkIsLoggedIn() && restricted ? (
@@ -23,12 +31,17 @@ export const PublicRoute = ({ restricted, children, ...rest }) => {
   );
 };
 
-PublicRoute.propTypes = {
-  children: PropTypes.element,
-  restricted: PropTypes.bool,
-};
+interface PrivateRouteProps {
+  path: string;
+  children: React.ReactNode;
+  [x: string]: unknown;
+}
 
-export const PrivateRoute = ({ children, path, ...rest }) => {
+export const PrivateRoute: React.FC<PrivateRouteProps> = ({
+  path,
+  children,
+  ...rest
+}) => {
   if (!checkIsLoggedIn()) {
     return <Redirect to={ROUTES.MAIN} />;
   }
@@ -42,9 +55,4 @@ export const PrivateRoute = ({ children, path, ...rest }) => {
       {isUserMenu(path) ? children : <Redirect to={ROUTES.MAIN} />}
     </Route>
   );
-};
-
-PrivateRoute.propTypes = {
-  children: PropTypes.element,
-  path: PropTypes.string,
 };
