@@ -1,5 +1,8 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { Switch } from 'react-router-dom';
+import userData from 'utils/userData.json';
+import { ROUTES, LOCAL_STORAGE } from 'utils/constants';
+import { PrivateRoute, PublicRoute } from 'routes';
 import Landing from 'Pages/Landing';
 import Support from 'Pages/Support';
 import Help from 'Pages/Help';
@@ -12,15 +15,14 @@ import Schedule from 'Pages/Schedule';
 import Log from 'Pages/Log';
 import Admin from 'Pages/Admin';
 import NotFound from 'Pages/NotFound';
-import userData from 'utils/userData.json';
-import { ROUTES, LOCAL_STORAGE } from 'utils/constants';
-import { PrivateRoute, PublicRoute } from 'routes';
 
-if (!LOCAL_STORAGE.get('userData')) {
-  LOCAL_STORAGE.set('userData', userData);
-}
+const App: React.FC = () => {
+  useEffect(() => {
+    if (!LOCAL_STORAGE.get('userData')) {
+      LOCAL_STORAGE.set('userData', userData);
+    }
+  }, []);
 
-function App() {
   return (
     <Switch>
       <PublicRoute exact path={ROUTES.MAIN} restricted={false}>
@@ -61,6 +63,6 @@ function App() {
       </PublicRoute>
     </Switch>
   );
-}
+};
 
 export default App;
