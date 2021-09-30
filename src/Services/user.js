@@ -1,11 +1,12 @@
-import { LOCAL_STORAGE } from 'utils/constants';
+import userDataStorage from 'utils/storage/userData';
+import tokenStorage from 'utils/storage/token';
 
 export const getCurrentUser = () => {
-  return LOCAL_STORAGE.get('token');
+  return tokenStorage.get();
 };
 
 export const getUserData = (userId) => {
-  const allUserData = LOCAL_STORAGE.get('userData');
+  const allUserData = userDataStorage.get();
   return allUserData.find((user) => user.userId === userId);
 };
 

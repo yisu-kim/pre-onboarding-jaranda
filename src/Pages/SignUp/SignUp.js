@@ -6,7 +6,8 @@ import get_address from './utils/get_address';
 import userDataForm from 'utils/storage/userDataForm';
 import setUserData from 'utils/setUserInfo';
 import { Validation } from 'utils/checkValid';
-import { LOCAL_STORAGE, ROUTES, MENUS, ROLES } from 'utils/constants';
+import { ROUTES, MENUS, ROLES } from 'utils/constants';
+import userDataStorage from 'utils/storage/userData';
 import Modal from 'Modal';
 import CreditCardForm from './CreditCardForm';
 import ToastForm from 'Components/ToastForm';
@@ -203,7 +204,7 @@ export default function SignUp({ accountPlus }) {
 
   const onClickIdValid = () => {
     const checkValidId = checkIdSignUp(userInfo.userId);
-    let userData = LOCAL_STORAGE.get('userData');
+    let userData = userDataStorage.get();
 
     const reduplication = userData.find(
       (data) => data.userId === userInfo.userId,

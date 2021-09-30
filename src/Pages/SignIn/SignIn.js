@@ -2,7 +2,9 @@ import React, { useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Validation } from 'utils/checkValid';
-import { LOCAL_STORAGE, ROUTES } from 'utils/constants';
+import { ROUTES } from 'utils/constants';
+import userDataStorage from 'utils/storage/userData';
+import tokenStorage from 'utils/storage/token';
 import { style } from './SignInStyle';
 import Layout from 'Components/Layout';
 
@@ -23,7 +25,7 @@ export default function SignIn() {
   };
 
   const sendLogin = (userID, userPW) => {
-    const userInfo = LOCAL_STORAGE.get('userData');
+    const userInfo = userDataStorage.get();
     let test =
       userInfo &&
       userInfo?.find(
@@ -31,7 +33,7 @@ export default function SignIn() {
       );
 
     if (test !== undefined) {
-      LOCAL_STORAGE.set('token', {
+      tokenStorage.set({
         userId: test.userId,
         role: test.role,
       });
@@ -49,7 +51,7 @@ export default function SignIn() {
       inputPwValue !== ''
     ) {
       const validLogin = sendLogin(inputIdValue, inputPwValue);
-      const tokenRole = LOCAL_STORAGE.get('token')?.role;
+      const tokenRole = tokenStorage.get()?.role;
       if (validLogin && tokenRole === 'admin') {
         history.push(ROUTES.ADMIN);
       } else if (validLogin && tokenRole !== 'admin') {

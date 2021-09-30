@@ -3,7 +3,8 @@ import Modal from 'Modal';
 import SignUp from 'Pages/SignUp';
 import searchIcon from 'Assets/search.png';
 import { style } from './AdminStyle';
-import { MENUS, LOCAL_STORAGE, LIMIT } from 'utils/constants';
+import { MENUS, LIMIT } from 'utils/constants';
+import userDataStorage from 'utils/storage/userData';
 import { getUserInfo } from 'utils/getUserInfo';
 import Checkbox from 'Components/Checkbox';
 import Layout from 'Components/Layout';
@@ -23,7 +24,7 @@ function Admin() {
   const checkedKeys = Object.keys(checkedArray);
 
   useEffect(() => {
-    initSelected(LOCAL_STORAGE.get('userData'));
+    initSelected(userDataStorage.get());
   }, []);
 
   useEffect(() => {
@@ -97,7 +98,7 @@ function Admin() {
   };
 
   const onClickSubmitBtn = () => {
-    const allUserData = LOCAL_STORAGE.get('userData');
+    const allUserData = userDataStorage.get();
     let userArray = [];
     for (let i = 0; i < Object.keys(allUserData).length; i++) {
       let origin_userId = allUserData[i].userId;
@@ -119,7 +120,7 @@ function Admin() {
         ),
       );
     }
-    LOCAL_STORAGE.set('userData', userArray);
+    userDataStorage.set(userArray);
     setIsSubmit(true);
 
     setTimeout(function () {

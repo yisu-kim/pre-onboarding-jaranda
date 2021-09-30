@@ -1,13 +1,12 @@
-import { LOCAL_STORAGE } from "./constants"
+import userDataStorage from 'utils/storage/userData';
 
-export default function setUserData(data){
-    if(LOCAL_STORAGE.get('userData')===null){
-        LOCAL_STORAGE.set('userData',[data])
-    }
-    else{
-        const userInfos = LOCAL_STORAGE.get("userData")
-        userInfos.push(data)
-        LOCAL_STORAGE.set("userData",userInfos)
-    }
-    return true;
+export default function setUserData(data) {
+  if (userDataStorage.get() === null) {
+    userDataStorage.set([data]);
+  } else {
+    const userInfos = userDataStorage.get();
+    userInfos.push(data);
+    userDataStorage.set(userInfos);
+  }
+  return true;
 }

@@ -1,20 +1,20 @@
 [
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "이용훈",
@@ -24,20 +24,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "박채연"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "박채연",
@@ -47,20 +47,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -70,20 +70,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -93,20 +93,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -116,20 +116,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -139,20 +139,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -162,20 +162,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -185,20 +185,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -208,20 +208,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -231,20 +231,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -254,20 +254,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -277,20 +277,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -300,20 +300,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
@@ -323,20 +323,20 @@
   },
   {
     "address": "07047 서울 동작구 장승배기로 1 ",
-    "age": "100",
+    "age": 100,
     "creditCard": {
-      "CVC": "111",
+      "CVC": 111,
       "cardNumber": "1231-2312-3123-1231",
       "expired": "1222",
       "holderName": "이용훈"
     },
 
     "menubar": [
-      {"name": "선생님 보기", "path": "/watch"},
-      {"name": "신청서 작성하기", "path": "/form"},
-      {"name": "신청 내역", "path": "/history"},
-      {"name": "방문일정", "path": "/schedule"},
-      {"name": "방문일지", "path": "/log"}
+      { "name": "선생님 보기", "path": "/watch" },
+      { "name": "신청서 작성하기", "path": "/form" },
+      { "name": "신청 내역", "path": "/history" },
+      { "name": "방문일정", "path": "/schedule" },
+      { "name": "방문일지", "path": "/log" }
     ],
 
     "name": "test",
