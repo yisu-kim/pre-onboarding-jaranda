@@ -1,8 +1,9 @@
-import { LOCAL_STORAGE, ROLES } from 'utils/constants';
+import { ROLES } from 'utils/constants';
+import tokenStorage from 'utils/storage/token';
 import { getCurrentUser } from './user';
 
 export const logout = () => {
-  LOCAL_STORAGE.remove('token');
+  tokenStorage.remove();
 };
 
 export const checkIsLoggedIn = () => {

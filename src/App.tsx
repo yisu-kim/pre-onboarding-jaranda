@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Switch } from 'react-router-dom';
-import userData from 'utils/userData.json';
-import { ROUTES, LOCAL_STORAGE } from 'utils/constants';
+import { ROUTES } from 'utils/constants';
+import userDataStorage from 'utils/storage/userData';
 import { PrivateRoute, PublicRoute } from 'routes';
 import Landing from 'Pages/Landing';
 import Support from 'Pages/Support';
@@ -18,8 +18,8 @@ import NotFound from 'Pages/NotFound';
 
 const App: React.FC = () => {
   useEffect(() => {
-    if (!LOCAL_STORAGE.get('userData')) {
-      LOCAL_STORAGE.set('userData', userData);
+    if (!userDataStorage.isExist()) {
+      userDataStorage.init();
     }
   }, []);
 

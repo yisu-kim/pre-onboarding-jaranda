@@ -1,7 +1,3 @@
-import storage from './storage/storage';
-
-export const LOCAL_STORAGE = storage(localStorage);
-
 export const ROUTES = {
   MAIN: '/',
   SUPPORT: '/support',
