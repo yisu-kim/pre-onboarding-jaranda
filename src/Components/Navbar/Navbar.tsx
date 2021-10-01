@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import {
   NavbarContainer,
   NavbarInnerContainer,
@@ -8,13 +7,14 @@ import {
 } from 'Components/Navbar/NavbarStyles';
 import jaranda from 'Assets/jarandalogo.png';
 import { PUBLIC_MENUS, ROUTES } from 'utils/constants';
+import { UserData } from 'utils/storage/userData';
 import { getUserMenu } from 'Services/user';
 import { checkIsAdmin, checkIsLoggedIn, logout } from 'Services/auth';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [userMenu, setUserMenu] = useState([]);
+  const [userMenu, setUserMenu] = useState<UserData['menubar']>([]);
 
   useEffect(() => {
     setIsLoggedIn(checkIsLoggedIn());
@@ -23,7 +23,7 @@ const Navbar = () => {
   useEffect(() => {
     if (isLoggedIn) {
       setIsAdmin(checkIsAdmin());
-      setUserMenu(getUserMenu());
+      setUserMenu(getUserMenu() as UserData['menubar']);
     } else {
       setUserMenu(PUBLIC_MENUS);
       setIsAdmin(false);
@@ -60,10 +60,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-Navbar.propTypes = {
-  isLoggedIn: PropTypes.bool,
-  userMenu: PropTypes.array,
-  isAdmin: PropTypes.bool,
-  onClickLogout: PropTypes.func,
-};
