@@ -10,7 +10,7 @@ import { ROUTES, MENUS, ROLES } from 'utils/constants';
 import userDataStorage from 'utils/storage/userData';
 import Modal from 'Modal';
 import CreditCardForm from './CreditCardForm';
-import ToastForm from 'Components/ToastForm';
+import Toast from 'Components/Toast';
 import { useHistory } from 'react-router-dom';
 import Layout from 'Components/Layout';
 
@@ -622,7 +622,7 @@ export default function SignUp({ accountPlus }) {
         />
       </Modal>
 
-      <ToastForm show={toast.status} contents={toast.msg} />
+      <Toast show={toast.status} contents={toast.msg} />
     </Layout>
   );
 }

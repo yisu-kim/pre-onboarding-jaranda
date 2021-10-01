@@ -7,7 +7,7 @@ import {
   limitLength,
   validateExpiration,
 } from './utils/cardValidation';
-import ToastForm from 'Components/ToastForm';
+import Toast from 'Components/Toast';
 
 const INPUT_NAMES = {
   CARD_NUMBER: 'cardNumber',
@@ -158,7 +158,7 @@ export default function CreditCardForm({
           <CreditButton onClick={onClickSubmitBtn}>등록</CreditButton>
         </Row>
       </Wrap>
-      <ToastForm show={toast.status} contents={toast.msg} />
+      <Toast show={toast.status} contents={toast.msg} />
     </Container>
   );
 }
