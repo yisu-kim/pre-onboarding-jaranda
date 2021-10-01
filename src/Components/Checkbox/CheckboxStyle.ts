@@ -9,7 +9,11 @@ export const Icon = styled.svg`
   stroke-width: 2px;
 `;
 
-export const CheckBox = styled.div`
+interface CheckBoxProps {
+  checked: boolean;
+}
+
+export const CheckBox = styled.div<CheckBoxProps>`
   cursor: pointer;
   display: inline-block;
   width: 20px;
