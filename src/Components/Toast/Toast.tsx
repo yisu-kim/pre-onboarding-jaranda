@@ -1,9 +1,13 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
 import { style } from './ToastStyle';
 
-export default function ToastForm({ show, contents }) {
+interface ToastProps {
+  show: boolean;
+  contents: string;
+}
+
+const Toast: React.FC<ToastProps> = ({ show, contents }) => {
   return createPortal(
     <>
       {show && (
@@ -16,13 +20,10 @@ export default function ToastForm({ show, contents }) {
         </Container>
       )}
     </>,
-    document.getElementById('toast-root'),
+    document.getElementById('toast-root') as HTMLDivElement,
   );
-}
-
-ToastForm.propTypes = {
-  show: PropTypes.bool,
-  contents: PropTypes.string,
 };
+
+export default Toast;
 
 const { Container, Wrap, Header, Contents } = style;
