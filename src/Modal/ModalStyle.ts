@@ -18,7 +18,11 @@ export const Container = styled.div`
   z-index: 1;
 `;
 
-export const Wrap = styled.div`
+interface WrapProps {
+  accountStyle: boolean;
+}
+
+export const Wrap = styled.div<WrapProps>`
   ${({ theme }) => theme.flexSet('flex-start', 'center', 'column')};
   position: absolute;
   width: ${({ accountStyle }) => (accountStyle ? '520px' : '480px')};
