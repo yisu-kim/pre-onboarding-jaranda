@@ -1,10 +1,10 @@
-import { css } from 'styled-components';
+import { css, FlattenSimpleInterpolation } from 'styled-components';
 
 const flexSet = (
   justify = 'center',
   items = 'center',
   direction = 'row',
-) => css`
+): FlattenSimpleInterpolation => css`
   display: flex;
   justify-content: ${justify};
   align-items: ${items};
