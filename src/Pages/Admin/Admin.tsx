@@ -1,20 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import Modal from 'Modal';
 import SignUp from 'Pages/SignUp';
 import searchIcon from 'Assets/search.png';
 import { style } from './AdminStyle';
 import { MENUS, LIMIT } from 'utils/constants';
-import userDataStorage from 'utils/storage/userData';
+import userDataStorage, { UserData } from 'utils/storage/userData';
 import { getUserInfo } from 'utils/getUserInfo';
 import Checkbox from 'Components/Checkbox';
 import Layout from 'Components/Layout';
 import { AiOutlineCheck } from 'react-icons/ai';
 import userDataForm from 'utils/storage/userDataForm';
 
-function Admin() {
-  const [data, setData] = useState([]);
+const Admin: React.FC = () => {
+  const [data, setData] = useState<UserData[]>([]);
   const [searchValue, setSearchValue] = useState('');
-  const [checkedArray, setCheckedArray] = useState({});
+  type selected = { name: string; path: string };
+  type checked = {
+    [userId: string]: selected[];
+  };
+  const [checkedArray, setCheckedArray] = useState<
+    checked | Record<string, never>
+  >({});
   const [modalStyle, setModalStyle] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [pages, setPages] = useState(1);
@@ -24,7 +30,10 @@ function Admin() {
   const checkedKeys = Object.keys(checkedArray);
 
   useEffect(() => {
-    initSelected(userDataStorage.get());
+    const userData = userDataStorage.get();
+    if (userData) {
+      initSelected(userData);
+    }
   }, []);
 
   useEffect(() => {
@@ -34,27 +43,24 @@ function Admin() {
     setClickCheck(false);
   }, [pages, searchValue, clickCheck]);
 
-  const onHandleSearch = (e) => {
+  const onHandleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
 
-  const initSelected = (userData) => {
-    let obj = new Object();
-    obj = userData.reduce(
+  const initSelected = (userData: UserData[]) => {
+    const obj = userData.reduce(
       (acc, cur) => ({ ...acc, [cur.userId]: cur.menubar }),
       {},
     );
     setCheckedArray(obj);
   };
 
-  const onClickChckBtn = (page, path, userId) => {
+  const onClickChckBtn = (page: string, path: string, userId: string) => {
     const seletedInfo = checkedKeys.includes(userId);
-    let obj = new Object();
-    let newSelected = [];
+    const obj: checked = {};
+    let newSelected: selected[] = [];
 
-    let innerObj = new Object();
-    innerObj['name'] = page;
-    innerObj['path'] = path;
+    const innerObj = { name: page, path };
 
     if (seletedInfo === false || checkedArray[userId].length <= 0) {
       newSelected.push(innerObj);
@@ -74,7 +80,7 @@ function Admin() {
       } else {
         newSelected = newSelected.concat(checkedArray[userId]);
         const rmvFindIndx = newSelected.indexOf(
-          newSelected.find((elem) => elem.name === innerObj.name),
+          newSelected.find((elem) => elem.name === innerObj.name) as selected,
         );
         newSelected.splice(rmvFindIndx, 1);
       }
@@ -86,7 +92,7 @@ function Admin() {
     setCheckedArray(obj);
   };
 
-  const isSelected = (name, userId) => {
+  const isSelected = (name: string, userId: string) => {
     if (checkedKeys.length > 0 && checkedKeys.includes(userId.toString())) {
       for (const [key] of Object.entries(checkedArray[userId])) {
         if (checkedArray[userId][Number(key)].name === name) {
@@ -98,11 +104,11 @@ function Admin() {
   };
 
   const onClickSubmitBtn = () => {
-    const allUserData = userDataStorage.get();
-    let userArray = [];
+    const allUserData = userDataStorage.get() as UserData[];
+    const userArray = [];
     for (let i = 0; i < Object.keys(allUserData).length; i++) {
-      let origin_userId = allUserData[i].userId;
-      let menubar = checkedArray[origin_userId];
+      const origin_userId = allUserData[i].userId;
+      const menubar = checkedArray[origin_userId];
 
       userArray.push(
         userDataForm(
@@ -210,7 +216,7 @@ function Admin() {
                   <Cell>{data.address}</Cell>
                   <Cell>
                     {MENUS.map((property, index) => {
-                      let isItemSelected = isSelected(
+                      const isItemSelected = isSelected(
                         property.name,
                         data.userId,
                       );
@@ -218,9 +224,8 @@ function Admin() {
                       return (
                         <div key={index}>
                           <Checkbox
-                            type="checkbox"
                             checked={isItemSelected}
-                            id={index}
+                            key={index}
                             onClick={() =>
                               onClickChckBtn(
                                 property.name,
@@ -261,7 +266,7 @@ function Admin() {
       </Modal>
     </Layout>
   );
-}
+};
 
 export default Admin;
 
