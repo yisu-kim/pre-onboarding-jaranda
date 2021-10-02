@@ -3,7 +3,7 @@ import Navbar from 'Components/Navbar';
 import { Container, Contents } from './LayoutStyle';
 
 interface LayoutProps {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
