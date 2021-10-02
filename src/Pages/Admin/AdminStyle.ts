@@ -142,11 +142,15 @@ export const PageAuthButton = styled.button`
   }
 `;
 
-export const AiOutlineLeftStyle = styled(AiOutlineLeft)`
+interface AiOutlineProps {
+  pageend: 'true' | 'false';
+}
+
+export const AiOutlineLeftStyle = styled(AiOutlineLeft)<AiOutlineProps>`
   color: ${({ pageend }) => (pageend === 'true' ? 'lightgray' : '')};
 `;
 
-export const AiOutlineRightStyle = styled(AiOutlineRight)`
+export const AiOutlineRightStyle = styled(AiOutlineRight)<AiOutlineProps>`
   color: ${({ pageend }) => (pageend === 'true' ? 'lightgray' : '')};
 `;
 
