@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { style } from './CreditCardFormStyle';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect, ChangeEvent } from 'react';
+import Toast from 'Components/Toast';
 import {
   addSeparatorBetweenNumber,
   getOnlyNumber,
   limitLength,
   validateExpiration,
 } from './utils/cardValidation';
-import Toast from 'Components/Toast';
+import { style } from './CreditCardFormStyle';
 
 const INPUT_NAMES = {
   CARD_NUMBER: 'cardNumber',
@@ -16,11 +15,24 @@ const INPUT_NAMES = {
   CVC: 'CVC',
 };
 
-export default function CreditCardForm({
+type CreditCard = {
+  cardNumber: string;
+  holderName: string;
+  expired: string;
+  CVC: string;
+};
+
+interface CreditCardFormProps {
+  closeModal: () => void;
+  creditCard: CreditCard;
+  handleCardInput: (card: CreditCard) => void;
+}
+
+const CreditCardForm: React.FC<CreditCardFormProps> = ({
   closeModal,
   creditCard,
   handleCardInput,
-}) {
+}) => {
   const { cardNumber, holderName, expired, CVC } = creditCard;
 
   const [cardInput, setCardInput] = useState({
@@ -44,7 +56,7 @@ export default function CreditCardForm({
     }
   }, [toast]);
 
-  const onChangeInfo = (e) => {
+  const onChangeInfo = (e: ChangeEvent<HTMLInputElement>) => {
     switch (e.target.name) {
       case INPUT_NAMES.CARD_NUMBER:
         setCardInput({
@@ -161,7 +173,9 @@ export default function CreditCardForm({
       <Toast show={toast.status} contents={toast.msg} />
     </Container>
   );
-}
+};
+
+export default CreditCardForm;
 
 const {
   Container,
@@ -175,9 +189,3 @@ const {
   CancelButton,
   CreditButton,
 } = style;
-
-CreditCardForm.propTypes = {
-  closeModal: PropTypes.func,
-  creditCard: PropTypes.object,
-  handleCardInput: PropTypes.func,
-};

@@ -8,7 +8,7 @@ export default function userDataForm(
   cardNumber: string,
   holderName: string,
   expired: string,
-  CVC: number,
+  CVC: string,
   role: string,
   address: string,
   menubar: { name: string; path: string }[],
