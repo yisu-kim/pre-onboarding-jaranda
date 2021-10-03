@@ -65,6 +65,7 @@ export const Input = styled.input`
 export const Input_ID = styled(Input).attrs({
   type: 'text',
   placeholder: '아이디',
+  maxlength: '30',
 })``;
 
 export const Input_PW = styled(Input).attrs({

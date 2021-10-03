@@ -1,26 +1,36 @@
-import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { style } from './SignUpStyle';
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  ChangeEvent,
+  MutableRefObject,
+} from 'react';
+import { useHistory } from 'react-router-dom';
 import { FiCheck } from 'react-icons/fi';
-import get_address from './utils/get_address';
+import { ROUTES, MENUS, ROLES } from 'utils/constants';
 import userDataForm from 'utils/storage/userDataForm';
+import userDataStorage, { UserData } from 'utils/storage/userData';
 import setUserData from 'utils/setUserInfo';
 import { Validation } from 'utils/checkValid';
-import { ROUTES, MENUS, ROLES } from 'utils/constants';
-import userDataStorage from 'utils/storage/userData';
 import Modal from 'Modal';
-import CreditCardForm from './CreditCardForm';
-import Toast from 'Components/Toast';
-import { useHistory } from 'react-router-dom';
 import Layout from 'Components/Layout';
+import Toast from 'Components/Toast';
+import CreditCardForm from './CreditCardForm';
+import get_address, { UserDataWithDaumAddress } from './utils/get_address';
+import { style } from './SignUpStyle';
+import { CreditCard } from './CreditCardForm/CreditCardForm';
 
-export default function SignUp({ accountPlus }) {
+interface SignUpProps {
+  accountPlus?: boolean;
+}
+
+const SignUp: React.FC<SignUpProps> = ({ accountPlus }) => {
   const history = useHistory();
-  const idInput = useRef();
-  const pwInput = useRef();
-  const pwConfirmInput = useRef();
-  const nameInput = useRef();
-  const ageInput = useRef();
+  const idInput = useRef<HTMLInputElement>(null);
+  const pwInput = useRef<HTMLInputElement>(null);
+  const pwConfirmInput = useRef<HTMLInputElement>(null);
+  const nameInput = useRef<HTMLInputElement>(null);
+  const ageInput = useRef<HTMLInputElement>(null);
   const [userPwconfirm, setUserPwConfirm] = useState('');
   const [isNumber, setIsNumber] = useState(false);
   const [isEnglish, setIsEnglish] = useState(false);
@@ -42,11 +52,11 @@ export default function SignUp({ accountPlus }) {
     },
     zcode: false,
   });
-  const [userInfo, setUserInfo] = useState({
+  const [userInfo, setUserInfo] = useState<UserDataWithDaumAddress>({
     userId: '',
     password: '',
     name: '',
-    age: '',
+    age: 0,
     creditCard: {
       cardNumber: '',
       holderName: '',
@@ -106,7 +116,7 @@ export default function SignUp({ accountPlus }) {
     }
   }, [userInfo.creditCard.cardNumber]);
 
-  const inputCheck = (limit) => {
+  const inputCheck = (limit: number) => {
     const { userId, password, password_confirm, name, age, zcode, creditCard } =
       inputChk;
     const { cardNumber } = creditCard;
@@ -167,7 +177,7 @@ export default function SignUp({ accountPlus }) {
     return result;
   };
 
-  const onChangeID = (e) => {
+  const onChangeID = (e: ChangeEvent<HTMLInputElement>) => {
     const id = e.target.value;
     const regex1 = /[A-Za-z0-9]+/g;
     const regex2 = /[^가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9]+/gi;
@@ -204,7 +214,7 @@ export default function SignUp({ accountPlus }) {
 
   const onClickIdValid = () => {
     const checkValidId = checkIdSignUp(userInfo.userId);
-    let userData = userDataStorage.get();
+    const userData = userDataStorage.get() as UserData[];
 
     const reduplication = userData.find(
       (data) => data.userId === userInfo.userId,
@@ -238,7 +248,7 @@ export default function SignUp({ accountPlus }) {
     }
   };
 
-  const onChangePW = (e) => {
+  const onChangePW = (e: ChangeEvent<HTMLInputElement>) => {
     inputCheck(1);
 
     const pw = e.target.value;
@@ -275,7 +285,7 @@ export default function SignUp({ accountPlus }) {
     HandleValidatePW(e.target.value);
   };
 
-  const HandleValidatePW = (value) => {
+  const HandleValidatePW = (value: string) => {
     const checkValidPw = checkPasswordSignUp(value);
 
     if (checkValidPw) {
@@ -291,13 +301,13 @@ export default function SignUp({ accountPlus }) {
     }
   };
 
-  const onChangePwConfirm = (e) => {
+  const onChangePwConfirm = (e: ChangeEvent<HTMLInputElement>) => {
     inputCheck(2);
     setUserPwConfirm(e.target.value);
     MatchPW(e.target.value);
   };
 
-  const MatchPW = (value) => {
+  const MatchPW = (value: string) => {
     if (value !== userInfo.password) {
       setToast({
         ...toast,
@@ -323,7 +333,7 @@ export default function SignUp({ accountPlus }) {
     }
   };
 
-  const onChangeName = (e) => {
+  const onChangeName = (e: ChangeEvent<HTMLInputElement>) => {
     inputCheck(3);
     setUserInfo({
       ...userInfo,
@@ -342,11 +352,11 @@ export default function SignUp({ accountPlus }) {
     }
   };
 
-  const onChangeAge = (e) => {
+  const onChangeAge = (e: ChangeEvent<HTMLInputElement>) => {
     inputCheck(4);
     setUserInfo({
       ...userInfo,
-      age: e.target.value,
+      age: parseInt(e.target.value),
     });
 
     if (e.target.value === '' || !userInfo) {
@@ -366,13 +376,13 @@ export default function SignUp({ accountPlus }) {
     get_address(userInfo, setUserInfo);
   };
 
-  const onChangeDetailAddr = (e) => {
+  const onChangeDetailAddr = (e: ChangeEvent<HTMLInputElement>) => {
     setUserInfo({ ...userInfo, detailAddr: e.target.value });
     inputCheck(5);
   };
 
-  const onChangeRoleAdmin = (e) => {
-    let isAdmin = e.target.checked;
+  const onChangeRoleAdmin = (e: ChangeEvent<HTMLInputElement>) => {
+    const isAdmin = e.target.checked;
 
     isAdmin
       ? setUserInfo({
@@ -393,7 +403,7 @@ export default function SignUp({ accountPlus }) {
     setShowModal(false);
   };
 
-  const handleCardInput = (cardInput) => {
+  const handleCardInput = (cardInput: CreditCard) => {
     setUserInfo({
       ...userInfo,
       creditCard: {
@@ -445,31 +455,31 @@ export default function SignUp({ accountPlus }) {
       const { userId, password, password_confirm, name, age } = inputChk;
 
       if (!userId) {
-        idInput.current.focus();
+        (idInput as MutableRefObject<HTMLInputElement>).current.focus();
       } else if (!password) {
-        pwInput.current.focus();
+        (pwInput as MutableRefObject<HTMLInputElement>).current.focus();
       } else if (!password_confirm) {
-        pwConfirmInput.current.focus();
+        (pwConfirmInput as MutableRefObject<HTMLInputElement>).current.focus();
       } else if (!name) {
-        nameInput.current.focus();
+        (nameInput as MutableRefObject<HTMLInputElement>).current.focus();
       } else if (!age) {
-        ageInput.current.focus();
+        (ageInput as MutableRefObject<HTMLInputElement>).current.focus();
       }
     }
   };
 
   const inputData = (
-    userId,
-    pw,
-    name,
-    age,
-    cardNumber,
-    holderName,
-    expired,
-    cvc,
-    role,
-    addr,
-    menubar,
+    userId: string,
+    pw: string,
+    name: string,
+    age: number,
+    cardNumber: string,
+    holderName: string,
+    expired: string,
+    cvc: string,
+    role: string,
+    addr: string,
+    menubar: { name: string; path: string }[],
   ) => {
     const data = userDataForm(
       userId,
@@ -510,12 +520,7 @@ export default function SignUp({ accountPlus }) {
           )}
 
           <Wrapper_ID>
-            <Input_ID
-              placeholder="ID"
-              maxLength="30"
-              onChange={onChangeID}
-              ref={idInput}
-            />
+            <Input_ID onChange={onChangeID} ref={idInput} />
             <Submit_ID_btn onClick={onClickIdValid}>
               아이디 중복 확인
             </Submit_ID_btn>
@@ -625,7 +630,9 @@ export default function SignUp({ accountPlus }) {
       <Toast show={toast.status} contents={toast.msg} />
     </Layout>
   );
-}
+};
+
+export default SignUp;
 
 const {
   Container,
@@ -654,7 +661,3 @@ const {
   Detailed_addr,
   Input_Radio,
 } = style;
-
-SignUp.propTypes = {
-  accountPlus: PropTypes.bool,
-};
