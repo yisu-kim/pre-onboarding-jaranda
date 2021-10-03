@@ -143,6 +143,10 @@ npm start
    - ✅ 로그인 후에는 사용자는 허가된 메뉴만 볼 수 있고 이동 가능
    - Not Found 페이지
 
+## Refactoring
+
+- TypeScript로 변환
+
 ## Members
 
 - [yisu-kim](https://github.com/yisu-kim)
