@@ -1,4 +1,8 @@
-export const addSeparatorBetweenNumber = (str, sliceNumber, separator) => {
+export const addSeparatorBetweenNumber = (
+  str: string,
+  sliceNumber: number,
+  separator: string,
+): string => {
   let result = '';
   let startIndex = 0;
   let endIndex = sliceNumber;
@@ -16,16 +20,17 @@ export const addSeparatorBetweenNumber = (str, sliceNumber, separator) => {
   return result.replace(separatorRegex, '');
 };
 
-export const getOnlyNumber = (target) => {
+export const getOnlyNumber = (target: string): string => {
   const numberRegex = new RegExp(/\d*/g);
-  return target.match(numberRegex).join('');
+  const onlyNumber = target.match(numberRegex);
+  return onlyNumber ? onlyNumber.join('') : '';
 };
 
-export const limitLength = (target, limitNumber) => {
+export const limitLength = (target: string, limitNumber: number): string => {
   return String(target).slice(0, limitNumber);
 };
 
-export const validateExpiration = (expired) => {
+export const validateExpiration = (expired: string): boolean => {
   const expirationRegex = new RegExp(/(0[1-9]|1[012])[/]\d\d/);
   const thisYear = new Date().getFullYear().toString().slice(2);
   if (expirationRegex.test(expired)) {
