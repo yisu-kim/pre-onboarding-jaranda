@@ -15,7 +15,7 @@ const INPUT_NAMES = {
   CVC: 'CVC',
 };
 
-type CreditCard = {
+export type CreditCard = {
   cardNumber: string;
   holderName: string;
   expired: string;

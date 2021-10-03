@@ -7,7 +7,7 @@ interface ModalProps {
   show: boolean;
   onClickClose: () => void;
   children: JSX.Element;
-  accountStyle: boolean;
+  accountStyle?: boolean;
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -22,7 +22,7 @@ const Modal: React.FC<ModalProps> = ({
         <>
           <Overlay>
             <Container>
-              <Wrap accountStyle={accountStyle}>
+              <Wrap accountStyle={accountStyle ? accountStyle : false}>
                 <Header>
                   <ModalClose onClick={onClickClose}>
                     <AiOutlineClose size={18} />
