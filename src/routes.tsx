@@ -13,7 +13,7 @@ export const PublicRoute: React.FC<PublicRouteProps> = ({
   restricted,
   children,
   ...rest
-}) => {
+}: PublicRouteProps) => {
   return (
     <Route {...rest}>
       {checkIsLoggedIn() && restricted ? (
@@ -41,7 +41,7 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({
   path,
   children,
   ...rest
-}) => {
+}: PrivateRouteProps) => {
   if (!checkIsLoggedIn()) {
     return <Redirect to={ROUTES.MAIN} />;
   }
