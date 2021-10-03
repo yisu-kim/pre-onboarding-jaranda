@@ -12,7 +12,7 @@ export type UserData = {
   address: string;
   menubar: { name: string; path: string }[];
   creditCard: {
-    CVC: number;
+    CVC: string;
     cardNumber: string;
     expired: string;
     holderName: string;
