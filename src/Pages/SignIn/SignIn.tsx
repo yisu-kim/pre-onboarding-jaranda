@@ -1,4 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, {
+  useState,
+  useRef,
+  ChangeEvent,
+  KeyboardEvent,
+  MutableRefObject,
+} from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Validation } from 'utils/checkValid';
@@ -8,31 +14,31 @@ import tokenStorage from 'utils/storage/token';
 import { style } from './SignInStyle';
 import Layout from 'Components/Layout';
 
-export default function SignIn() {
+const SignIn: React.FC = () => {
   const [isValid, setIsValid] = useState(false);
   const [inputIdValue, setInputIdValue] = useState('');
   const [inputPwValue, setInputPwValue] = useState('');
   const history = useHistory();
-  const inputPw = useRef();
+  const inputPw = useRef<HTMLInputElement>(null);
   const { checkId, checkPassword } = Validation;
 
-  const onChangePwInput = (e) => {
+  const onChangePwInput = (e: ChangeEvent<HTMLInputElement>) => {
     setInputIdValue(e.target.value);
   };
 
-  const onChangeIdInput = (e) => {
+  const onChangeIdInput = (e: ChangeEvent<HTMLInputElement>) => {
     setInputPwValue(e.target.value);
   };
 
-  const sendLogin = (userID, userPW) => {
+  const sendLogin = (userID: string, userPW: string) => {
     const userInfo = userDataStorage.get();
-    let test =
+    const test =
       userInfo &&
       userInfo?.find(
         (data) => data.userId === userID && data.password === userPW,
       );
 
-    if (test !== undefined) {
+    if (test !== undefined && test !== null) {
       tokenStorage.set({
         userId: test.userId,
         role: test.role,
@@ -65,10 +71,11 @@ export default function SignIn() {
     }, 6000);
   };
 
-  const onKeyPressEnterkey = (e) => {
+  const onKeyPressEnterkey = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      e.target.placeholder === '아이디'
-        ? inputPw.current.focus()
+      const target = e.target as HTMLInputElement;
+      target.placeholder === '아이디'
+        ? (inputPw as MutableRefObject<HTMLInputElement>).current.focus()
         : onClickCheckLogin();
     }
   };
@@ -88,6 +95,7 @@ export default function SignIn() {
             onKeyPress={onKeyPressEnterkey}
           />
           <PasswordInput
+            ref={inputPw}
             onChange={(e) => onChangeIdInput(e)}
             onKeyPress={onKeyPressEnterkey}
           />
@@ -98,7 +106,9 @@ export default function SignIn() {
       </Container>
     </Layout>
   );
-}
+};
+
+export default SignIn;
 
 const {
   Container,
