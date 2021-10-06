@@ -92,6 +92,7 @@
 ### Built With
 
 - React
+- TypeScript
 - React Router
 - styled-components
 
